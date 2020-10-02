@@ -1,3 +1,19 @@
+:root{
+
+    /**
+    **  Paleta de colores:
+    **  https://paletasdecolores.com/paleta-de-colores-1760/
+    **/
+    --bg-color: #ece5dd;
+    --text-color: black;
+    --focus-color: #e2257e;
+    --link-color: #648fb5;
+    --sd-color: #1f3649;
+    --nav-color: #181010;
+    --no-imp-color: #9ec3d3;
+    --no-imp2-color: #4c4442;
+}
+
 table.table.options-web{
     border-spacing: 0px;
     padding: 10pt;
@@ -14,4 +30,42 @@ table.table.options-web td{
 
 table a{
     padding: 10pt;
+}
+table a:hover{
+    background-color: lightgray;
+}
+table>tbody>tr{
+    width: 50%;
+}
+
+.info{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.btn{
+    text-decoration: none;
+    border: 1px solid lightgray ;
+    padding: 5pt;
+    border-radius: 5px;
+    margin: 5pt;
+}
+
+div.info>div{
+    padding: 10pt;
+    text-align: left;
+    vertical-align: middle;
+
+}
+.block{
+    display: block;
+}
+
+.active{
+    background-color: var(--sd-color);
+    color:white;
+    border: 1px solid var(--sd-color);
 }

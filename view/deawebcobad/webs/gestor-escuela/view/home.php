@@ -27,42 +27,72 @@
         <table class="table options-web" >
             <tbody>
                 <tr>
-                    <td><a class="a-titles"  href="#">Grupos</a></td>
+                    <td style="width: 40%;"><a class="a-titles active" onclick="showInfo(0)" id="option-0"   href="#">Grupos</a></td>
                     <td rowspan="5">
-                        <div id="" class="info">
-
+                        <div id="info-0" class="info show">
+                            <div >
+                                <strong>Grupos</strong>
+                                <a class="btn block">Consultar</a>
+                                <a class="btn block">Agregar</a>
+                                <a class="btn block">Eliminar</a>
+                                <a class="btn block">Actualizar</a>
+                            </div>
                         </div>
-                        <div class="info">
-
+                        <div id="info-1" class="info"> 
+                            <div>
+                                <strong>Especialidad</strong>
+                                <a class="btn block">Consultar</a>
+                                <a class="btn block">Agregar</a>
+                                <a class="btn block">Eliminar</a>
+                                <a class="btn block">Actualizar</a>
+                            </div>
                         </div>
-                        <div class="info">
-
+                        <div id="info-2" class="info">
+                            <div>
+                                <strong>Maestros</strong>
+                                <a class="btn block">Consultar</a>
+                                <a class="btn block">Agregar</a>
+                                <a class="btn block">Eliminar</a>
+                                <a class="btn block">Actualizar</a>
+                            </div>
                         </div>
-                        <div class="info">
-
+                        <div id="info-3" class="info">
+                            <div>
+                                <strong>Materias</strong>
+                                <a class="btn block">Consultar</a>
+                                <a class="btn block">Agregar</a>
+                                <a class="btn block">Eliminar</a>
+                                <a class="btn block">Actualizar</a>
+                            </div>
                         </div>
-                        <div class="info">
-
+                        <div id="info-4" class="info">
+                            <div>
+                                <strong>Carga</strong>
+                                <a class="btn block">Consultar</a>
+                                <a class="btn block">Agregar</a>
+                                <a class="btn block">Eliminar</a>
+                                <a class="btn block">Actualizar</a>
+                            </div>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td><a class="a-titles"  href="#">Maestros</a></td>
+                    <td><a class="a-titles" onclick="showInfo(1)" id="option-1"  href="#">Especialidad</a></td>
                 </tr> 
                 <tr>
-                    <td><a class="a-titles"  href="#">Maestros</a></td>
+                    <td><a class="a-titles"  onclick="showInfo(2)" id="option-2"  href="#">Maestros</a></td>
                 </tr> 
                 <tr>
-                    <td><a class="a-titles"  href="#">Maestros</a></td>
+                    <td><a class="a-titles"  onclick="showInfo(3)" id="option-3"  href="#">Materias</a></td>
                 </tr> 
                 <tr>
-                    <td><a class="a-titles"  href="#">Maestros</a></td>
+                    <td><a class="a-titles"  onclick="showInfo(4)" id="option-4"  href="#">Carga</a></td>
                 </tr> 
                 
             </tbody>
         </table>
         </div>
     </div>
-
+<script src="<?php echo $url.'/src/js/gestorescuela.js?v='.filemtime($raiz.'/src/js/gestorescuela.js'); ?>"></script>
 </body>
 </html>
