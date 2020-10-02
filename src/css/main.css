@@ -1,0 +1,180 @@
+:root{
+    /*
+    --bg-color: #f9f5ed; /*#f3e0ec;
+    --text-color: black;
+    --focus-color: #e2257e;
+    --link-color: #648fb5;
+    --nav-color: #252221;
+    */
+    /**
+    **  Paleta de colores:
+    **  https://paletasdecolores.com/paleta-de-colores-1760/
+    **/
+    --bg-color: #ece5dd;
+    --text-color: black;
+    --focus-color: #e2257e;
+    --link-color: #648fb5;
+    --sd-color: #1f3649;
+    --nav-color: #181010;
+    --no-imp-color: #9ec3d3;
+    --no-imp2-color: #4c4442;
+}
+*{
+    margin: 0px;
+}
+body{
+    background-color: var(--bg-color);
+    padding: 0px;   
+    border: 0px;
+}
+
+table{
+    width: 100%;
+    padding: 5pt;
+    text-align: left;
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 0px 0px 25px 25px;
+}
+td, th{   
+    text-align: left;
+}
+tr{
+    height: 20px;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a.a-white{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: var(--focus-color);
+}
+
+form.form-s{
+    width: 25%;
+    margin: 0px;
+}
+
+div.center{
+    text-align: center;
+}
+
+input, select{
+    border-radius: 10px;
+    outline-width: 0px;
+    background-color: white;
+    border: 1px solid var(--sd-color);
+    padding: 4pt;
+    margin: 5pt;
+}
+input:focus, select:focus{
+    border: 2px solid var(--focus-color);
+}
+
+/*************  HOME  ************/
+nav{
+    background-color: var(--nav-color);
+    padding: 0px;
+    border: 0px;
+    height: 30pt;
+    
+}
+nav.inv{
+    background-color: var(--sd-color);
+}
+div.navbar{
+    font-size: 1.2em;
+    color: white;
+    margin: auto;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+div#home-options{
+    width: 100%;    
+    align-content: center;
+    padding-top: 50px;
+    text-align: center;
+}
+
+div.jumbo.button.home{
+    background-color: var(--sd-color);
+    max-width: 500px;
+    height: 300px;
+    max-height: 400px;
+    display: inline-block;
+    margin: 10pt;
+    border: none;
+    border-radius: 25px;
+    padding-top: 50px;
+    
+
+}
+div.jumbo.button.home:hover{
+    box-shadow: 0px 0px 20px var(--sd-color);
+}
+
+
+div.jumbo.button.home>button{
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    outline-width: 0px;
+    cursor: pointer !important;
+}
+
+/*------------------------ Menu -------------------------------*/
+
+div.d-table{
+
+    padding: 10pt;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+div.table-head{
+    background-color: white;
+    padding: 10pt;
+    border-radius: 25px 25px 0px 0px;
+    margin-bottom: 0px;
+    color: var(--sd-color);
+}
+
+/*--------------------------------------------------------------------*/
+div.d-act{
+    padding: 10%;
+    padding-top: 10pt;
+    
+}
+
+div.d-content{
+    margin-top: 10pt;
+    display: inline-block;
+    width: 30%;
+}
+
+
+div.buttons-collapse>div.titles, div.buttons-collapse div.content{
+    display: inline-block;
+    width: 45%;
+    margin: 0px;
+}
+div.buttons-collapse div.content{
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+
+}
+div.buttons-collapse div.d-hidden{
+    display: none;
+}
+ a.a-titles{
+    border: 1px solid lightgray;
+    display: block;
+    margin: 0px;
+}

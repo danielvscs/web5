@@ -1,0 +1,17 @@
+table.table.options-web{
+    border-spacing: 0px;
+    padding: 10pt;
+}
+table.table.options-web tr{
+    padding: 0px;
+    border:0px;
+    
+}
+table.table.options-web td{
+    padding: 0px;
+    border:0px;
+}
+
+table a{
+    padding: 10pt;
+}
