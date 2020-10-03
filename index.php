@@ -49,7 +49,7 @@ if(count($partes_ruta)==1){
     }
 }
 
-if(count($partes_ruta)==3){
+if(count($partes_ruta)>=3){
     if($partes_ruta[0]=="cobadaapweb" && $partes_ruta[1]=="actividad"){
         $ruta_elegida="view/cobadaapweb/actividades/".$partes_ruta[2];
     }else if($partes_ruta[0]=="deawebcobad" && $partes_ruta[1]=="actividad"){
@@ -60,11 +60,15 @@ if(count($partes_ruta)==3){
         $ruta_elegida="view/deawebcobad/webs/redirect.php";
     }
 }
+
+
 if(count($partes_ruta)==5){
-    if($partes_ruta[3]="testlocalhost"){
+
+    if($partes_ruta[3]=="testlocalhost" && $partes_ruta[1]=="a"){
         $ruta_elegida="view/templates/test/".$partes_ruta[4];
     }
 }
+
 
 include_once $ruta_elegida;
 ?>

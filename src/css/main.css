@@ -28,7 +28,7 @@ body{
     border: 0px;
 }
 
-table{
+table, .radius-inf{
     width: 100%;
     padding: 5pt;
     text-align: left;
@@ -71,9 +71,12 @@ input, select{
     border: 1px solid var(--sd-color);
     padding: 4pt;
     margin: 5pt;
+    box-sizing: border-box;
 }
 input:focus, select:focus{
     border: 2px solid var(--focus-color);
+    
+    box-sizing: border-box;
 }
 
 /*************  HOME  ************/
@@ -138,7 +141,7 @@ div.d-table{
     padding-right: 5%;
 }
 
-div.table-head{
+div.table-head, .radius-sup{
     background-color: white;
     padding: 10pt;
     border-radius: 25px 25px 0px 0px;
