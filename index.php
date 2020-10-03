@@ -1,7 +1,7 @@
 <?php
 
 
-$local = true;
+$local = false;
 $lh = "";
 
 $url = "https://danvscs47.000webhostapp.com";
