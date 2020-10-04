@@ -2,20 +2,13 @@
 
 <?php
 
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/grupos.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_grupo.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/alumnos.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_alumno.php");
 
 
-$bd = new bd_grupo();
+$bd = new bd_alumno();
 
 $lista = $bd->lista();
-
-
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_especialidad.php");
-
-
-$bde = new bd_especialidad();
 
 
 ?>
@@ -25,7 +18,7 @@ $bde = new bd_especialidad();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de grupos</title>
+    <title>Actualiza alumnos</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -42,17 +35,17 @@ $bde = new bd_especialidad();
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Grupos registrados</h1>
+                <h1>Alumnos registrados</h1>
             </div>
             <div class="radius-inf">
-                <form action="control/eliminar" method="POST">
+                <form action="control/actualizar" method="POST">
                         <?php
                         for ($i=0; $i < count($lista); $i++) {
-                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidgrupo()."' >".$lista[$i]->getsemestre()." ".$lista[$i]->getgrupo()." ".$bde->busca($lista[$i]->getidespecialidad())[0]->getespecialidad()."<br>\n";
+                            echo "  <input type='radio' name='idalumno' value='".$lista[$i]->getidalumno()."' >".$lista[$i]->getnombre()." | ".$lista[$i]->getcurp()."<br>\n";
 
                         }
                         ?>
-                        <button type="submit" class="btn">Eliminar</button>
+                        <button type="submit" class="btn">Actualizar</button>
                 </form>
             
             </div>

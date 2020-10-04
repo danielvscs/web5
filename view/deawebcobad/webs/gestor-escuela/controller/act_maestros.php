@@ -19,7 +19,7 @@ $lista = $bd->busca($datos->getidmaestro());
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Subir imagenes</title>
+    <title>Actualizar</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -36,7 +36,7 @@ $lista = $bd->busca($datos->getidmaestro());
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Registro de maestros</h1>
+                <h1>Actualiza maestros</h1>
             </div>
             <div class="radius-inf">
                 <form name="add-grupos" method="post" action="actualizarp">

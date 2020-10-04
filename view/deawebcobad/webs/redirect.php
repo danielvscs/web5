@@ -1,7 +1,7 @@
 <?php
 //Redireccionador de la web
 
-$ruta_elegida =$url.'/view/404.php';
+$ruta_elegida =$raiz.'/view/404.php';
 if($partes_ruta[2]=="gestor-escuela"){ 
     
     if(count($partes_ruta)==3){
@@ -47,15 +47,25 @@ if($partes_ruta[2]=="gestor-escuela"){
             }else if($partes_ruta[4]=="actualizar"){
                 $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/m-materia.php";
             }
-        }else if($partes_ruta[3]=="cargas"){
+        }else if($partes_ruta[3]=="carga"){
             if($partes_ruta[4]=="agregar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/frm_grupos.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/frm_carga.php";
             }else if($partes_ruta[4]=="consultar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/con_carga.php";
             }else if($partes_ruta[4]=="eliminar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/del_carga.php";
             }else if($partes_ruta[4]=="actualizar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/m-carga.php";
+            }
+        }else if($partes_ruta[3]=="alumnos"){
+            if($partes_ruta[4]=="agregar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/frm_alumno.php";
+            }else if($partes_ruta[4]=="consultar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/con_alumno.php";
+            }else if($partes_ruta[4]=="eliminar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/del_alumno.php";
+            }else if($partes_ruta[4]=="actualizar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/view/m-alumno.php";
             }
         }
     }else if(count($partes_ruta)==6){
@@ -108,17 +118,29 @@ if($partes_ruta[2]=="gestor-escuela"){
             }else if($partes_ruta[5]=="actualizarp"){
                 $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/a_materia.php";
             }
-        }else if($partes_ruta[3]=="cargas"){
+        }else if($partes_ruta[3]=="carga"){
             if($partes_ruta[5]=="agregar"){
                 $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/carga.php";
             }else if($partes_ruta[5]=="consultar"){
                 $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/con_carga.php";
             }else if($partes_ruta[5]=="eliminar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/d_carga.php";
             }else if($partes_ruta[5]=="actualizar"){
-                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/.php";
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/act_carga.php";
             }else if($partes_ruta[5]=="actualizarp"){
                 $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/a_carga.php";
+            }
+        }else if($partes_ruta[3]=="alumnos"){
+            if($partes_ruta[5]=="agregar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/alumno.php";
+            }else if($partes_ruta[5]=="consultar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/con_alumno.php";
+            }else if($partes_ruta[5]=="eliminar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/d_alumno.php";
+            }else if($partes_ruta[5]=="actualizar"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/act_alumno.php";
+            }else if($partes_ruta[5]=="actualizarp"){
+                $ruta_elegida =$raiz."/view/deawebcobad/webs/gestor-escuela/controller/a_alumno.php";
             }
         }
     }

@@ -2,22 +2,27 @@
 
 <?php
 
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_materia.php");
+
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/grupos.php");
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_grupo.php");
 
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/maestros.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_maestro.php");
 
-$bd = new bd_grupo();
-
-$lista = $bd->lista();
-
-
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_especialidad.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_carga.php");
 
 
-$bde = new bd_especialidad();
+$bde = new bd_materia();
+$bdg= new bd_grupo();
+$bdm = new bd_maestro(1);
+
+$bdc = new bd_carga();
 
 
+$lista = $bdc->lista();
 ?>
 
 
@@ -25,7 +30,7 @@ $bde = new bd_especialidad();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de grupos</title>
+    <title>Consulta de cargas</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -42,13 +47,16 @@ $bde = new bd_especialidad();
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Grupos registrados</h1>
+                <h1>Cargas registradas</h1>
             </div>
             <div class="radius-inf">
                 <form action="control/eliminar" method="POST">
                         <?php
                         for ($i=0; $i < count($lista); $i++) {
-                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidgrupo()."' >".$lista[$i]->getsemestre()." ".$lista[$i]->getgrupo()." ".$bde->busca($lista[$i]->getidespecialidad())[0]->getespecialidad()."<br>\n";
+                            
+                            $grupo =$bdg->busca($lista[$i]->getidgrupo())[0];
+                            $maestro =$bdm->busca($lista[$i]->getidmaestro())[0];
+                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidcarga()."' >".$maestro->getappat()." ".$maestro->getapmat()." ".$maestro->getnombre()." | ".$grupo->getsemestre().$gupo->getgrupo().$grupo->getturno()."<br>\n";
 
                         }
                         ?>

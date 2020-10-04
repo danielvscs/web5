@@ -18,7 +18,7 @@ $lista = $bd->lista();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de especialidades</title>
+    <title>Actualiza especialidades</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">

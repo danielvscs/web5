@@ -1,21 +1,20 @@
 <?php
 
+
+
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
+
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_carga.php");
 
 
 $datos = new carga($_POST);
 
-
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_carga.php");
-
 $bd = new bd_carga();
-
-$bd->agrega($datos);
-
+$bd->actualiza($datos);
 
 #header a especialidad
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

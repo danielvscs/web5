@@ -1,10 +1,10 @@
 <?php
 
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_materia.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/alumnos.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_alumno.php");
 
 
-$bd = new bd_materia();
+$bd = new bd_alumno();
 
 $lista = $bd->lista();
 
@@ -15,7 +15,7 @@ $lista = $bd->lista();
 <html lang="es">
 <head>
     <meta charset="UTF-8">  
-    <title>Consulta de materias</title>
+    <title>Consulta de alumnos</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -32,7 +32,7 @@ $lista = $bd->lista();
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Materias registradas</h1>
+                <h1>Alumnos registrados</h1>
             </div>
             <div class="radius-inf">
                 <table>
@@ -40,8 +40,12 @@ $lista = $bd->lista();
                         <?php
                         for ($i=0; $i < count($lista); $i++) { 
                             echo "<tr>\n";
-                            echo "  <td>".$lista[$i]->getmateria()."</td>\n";
-                            echo "  <td>".$lista[$i]->getarea()."</td>\n";
+                            echo "  <td>".$lista[$i]->getnombre()."</td>\n";
+                            echo "  <td>".$lista[$i]->getcurp()."</td>\n";
+                            echo "  <td>".$lista[$i]->getcorreo()."</td>\n";
+                            echo "  <td>".$lista[$i]->getcelular()."</td>\n";
+                            echo "  <td>".$lista[$i]->getciudad()."</td>\n";
+                            echo "</tr>\n";
                         }
                         ?>
                     </tbody>

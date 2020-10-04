@@ -1,14 +1,14 @@
 <?php
 
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/alumnos.php");
 
 
-$datos = new carga($_POST);
+$datos = new alumnos($_POST);
 
 
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_carga.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_alumno.php");
 
-$bd = new bd_carga();
+$bd = new bd_alumno();
 
 $bd->agrega($datos);
 
@@ -25,7 +25,7 @@ $bd->agrega($datos);
 </head>
     <body>
         <script type="text/javascript">
-        window.location="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/carga/consultar";
+        window.location="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/alumnos/consultar";
         </script>
     </body>
 </html>

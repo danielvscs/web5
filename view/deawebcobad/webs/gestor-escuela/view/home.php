@@ -72,6 +72,15 @@
                                 <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/carga/actualizar"  >Actualizar</a>
                             </div>
                         </div>
+                        <div id="info-5" class="info">
+                            <div>
+                                <strong>Alumnos</strong>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/alumnos/consultar"  >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/alumnos/agregar"  >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/alumnos/eliminar"  >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/alumnos/actualizar"  >Actualizar</a>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -85,6 +94,9 @@
                 </tr> 
                 <tr>
                     <td><a class="a-titles"  onclick="showInfo(4)" id="option-4"  href="#">Carga</a></td>
+                </tr> 
+                <tr>
+                    <td><a class="a-titles"  onclick="showInfo(5)" id="option-5"  href="#">Alumonos</a></td>
                 </tr> 
                 
             </tbody>

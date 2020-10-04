@@ -2,24 +2,22 @@
 
 
 include_once('base.php');
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/alumnos.php");
 
-class bd_carga extends DataBase{
+class bd_alumno extends DataBase{
 
     public function agrega($datos){
-        $sql = "INSERT INTO carga (idmaestro,idmateria,idgrupo) VALUES(".$datos->getidmaestro().",".$datos->getidmateria().",".$datos->getidgrupo().")";
+        $sql = "INSERT INTO alumnos (nombre,curp,correo,celular,domicilio,ciudad) VALUES('".$datos->getnombre()."','".$datos->getcurp()."','".$datos->getcorreo()."','".$datos->getcelular()."', '".$datos->getdomicilio()."', '".$datos->getciudad()."')";
         $con = $this->getDB();
         echo $sql;
         $resultado = $con->query($sql);
         $con->close();
-
-
     }
 
     public function lista(){
         $lista = array();
 
-        $sql = "SELECT * FROM carga ORDER BY idcarga";
+        $sql = "SELECT * FROM alumnos ORDER BY idalumno";
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -29,36 +27,35 @@ class bd_carga extends DataBase{
             for ($i=0; $i < $resultado->num_rows; $i++) { 
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new carga($renglon);
+                $dato_tabla = new alumnos($renglon);
 
                 $lista[$i]= $dato_tabla;
             }
         }
-
         return $lista;
-
     }
 
-    public function elimina($idcarga){
+    public function elimina($id){
         
-        $sql = "DELETE FROM cargar WHERE idcargar=".$idcarga;
+        $sql = "DELETE FROM alumnos WHERE idalumno=".$id;
         $con = $this->getDB();
         $resultado = $con->query($sql);
         $con->close();
     }
 
     public function actualiza($datos){
-        $sql = "UPDATE carga SET idmaestro=".$datos->getidmaestro().", idmateria=".$datos->getidmateria().", idgrupo=".$datos->getidgrupo()." WHERE idcarga=".$datos->getidcarga();
+        $sql = "UPDATE alumnos SET nombre='".$datos->getnombre()."', curp='".$datos->getcurp()."', correo='".$datos->getcorreo()."', celular='".$datos->getcelular()."', domicilio='".$datos->getdomicilio()."', ciudad='".$datos->getciudad()."' WHERE idalumno=".$datos->getidalumno();
         $con = $this->getDB();
         
         $resultado = $con->query($sql);
         $con->close();
     }
 
+       
     public function busca($id){
         $lista = array();
 
-        $sql = "SELECT * FROM carga WHERE idcarga=".$id;
+        $sql = "SELECT * FROM alumnos WHERE idalumno=".$id;
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -67,7 +64,7 @@ class bd_carga extends DataBase{
         if($resultado->num_rows>0){
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new carga($renglon);
+                $dato_tabla = new alumnos($renglon);
 
                 $lista[0]= $dato_tabla;
         }
@@ -76,5 +73,6 @@ class bd_carga extends DataBase{
 
     }
 
+    
 
 }

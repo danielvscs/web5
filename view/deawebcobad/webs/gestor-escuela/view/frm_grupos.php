@@ -24,7 +24,7 @@ for ($i=1; $i <=count($lista) ; $i++) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Subir imagenes</title>
+    <title>Registro</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">

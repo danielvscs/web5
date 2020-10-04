@@ -25,7 +25,7 @@ $bde = new bd_especialidad();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de especialidades</title>
+    <title>Actualiza grupos</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -42,7 +42,7 @@ $bde = new bd_especialidad();
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Especialidades registradas</h1>
+                <h1>Grupos registradas</h1>
             </div>
             <div class="radius-inf">
                 <form action="control/actualizar" method="POST">

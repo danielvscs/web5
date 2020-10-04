@@ -18,7 +18,7 @@ $lista = $bd->lista(1);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de especialidades</title>
+    <title>Consulta de maestros</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -35,7 +35,7 @@ $lista = $bd->lista(1);
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Especialidades registradas</h1>
+                <h1>Maestros registrados</h1>
             </div>
             <div class="radius-inf">
                 <form action="control/eliminar" method="POST">
