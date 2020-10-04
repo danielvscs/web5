@@ -23,14 +23,15 @@
                 <h1>Registro de especialidad</h1>
             </div>
             <div class="radius-inf">
-                <form name="add-grupos" method="post" action="">
+                <form name="add-grupos" method="post" action="control/agregar">
                     <label>Nombre: </label>
-                    <input name="materia" type="text" maxlength="40">
+                    <input name="especialidad" type="text" maxlength="40">
                     <br>
                     <br>
                 
                 <input name="forma" type="hidden" value="si-orde">
                 <input type="submit" name="procesos" value="Enviar">
+                
     
             </form>
             

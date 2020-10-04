@@ -26,17 +26,37 @@ class DataBase{
             );
 
             $this->db->set_charset("utf8");
-
+/*
             if(mysql_connect_errno()){
                 throw new Exception("No es posible conectar a la base de datos");
                 
             }else{
+                */
                 return $this->db;
+                /*
             }
-
+*/
         } catch (Exeption $e) {
             $this->messages['DB_connection']=$e->getMessage();
         }
+    }
+
+/**
+ * 
+ * 
+ * $data = array(
+ *      "nombre",
+ *      array("Values","VAlues"),
+ *      array("Descripcion")
+ * );
+ * 
+ */
+    public function showselect($data){
+        echo "<select name='".$data[0]."'>\n";
+        for ($i=0; $i<count($data[1]) ; $i++) { 
+            echo "  <option value='".$data[1][$i]."'>".$data[2][$i]."</option>\n";
+        }
+        echo "</select>\n";
     }
 
 }

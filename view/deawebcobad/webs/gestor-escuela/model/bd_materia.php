@@ -7,7 +7,7 @@ include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
 class bd_materia extends DataBase{
 
     public function agrega($datos){
-        $sql = "INSERT INTO materias ('materia','area') VALUES('".$datos->getmateria()."',".$datos->getarea().")";
+        $sql = "INSERT INTO materias (materia,area) VALUES('".$datos->getmateria()."',".$datos->getarea().")";
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -29,7 +29,7 @@ class bd_materia extends DataBase{
             for ($i=0; $i < $resultado->num_rows; $i++) { 
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new especialidades($reglon);
+                $dato_tabla = new materias($renglon);
 
                 $lista[$i]= $dato_tabla;
             }

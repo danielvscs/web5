@@ -1,3 +1,24 @@
+<?php
+
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_especialidad.php");
+
+
+$bd = new bd_especialidad();
+
+$lista = $bd->lista();
+
+$data = array("idespecialidad", array(),array());
+
+$data[1][0]=0;
+$data[2][0]="";
+for ($i=1; $i <=count($lista) ; $i++) { 
+    $data[1][$i]=$lista[$i-1]->getidespecialidad();
+    $data[2][$i]=$lista[$i-1]->getespecialidad();
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -23,10 +44,10 @@
                 <h1>Registro de grupos</h1>
             </div>
             <div class="radius-inf">
-                <form name="add-grupos" method="post" action="">
+                <form name="add-grupos" method="post" action="control/agregar">
                     
                 <label>Semestre</label>
-                <select>
+                <select name="semestre">
                     <option value="0"> </option>
                     <option value="1">1°</option>
                     <option value="2">2°</option>
@@ -36,7 +57,7 @@
                     <option value="6">6°</option>
                 </select>
                 <label>Grupo</label>
-                <select>
+                <select name="grupo">
                     <option value="0"> </option>
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -45,17 +66,13 @@
                 </select>
                 <br>
                 <label>Turno: </label>
-                <select>
+                <select name="turno">
                     <option value="-1"> </option>
-                    <option value="0">Matutino</option>
-                    <option value="1">Vespertino</option>
+                    <option value="M">Matutino</option>
+                    <option value="V">Vespertino</option>
                 </select>
                 <label>Especialidad: </label>
-                <select>
-                    <option value="-1"> </option>
-                    <option value="0">Matutino</option>
-                    <option value="1">Vespertino</option>
-                </select>
+                <?php echo $bd->showselect($data); ?>
 
 
                 

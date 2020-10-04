@@ -7,7 +7,7 @@ include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
 class bd_cargar extends DataBase{
 
     public function agrega_carga($datos){
-        $sql = "INSERT INTO carga ('idmaestro','idmateria','idgrupo') VALUES('".$datos->getidmaestro()."','".$datos->getdimateria()."','".$datos->getidgrupo()."')";
+        $sql = "INSERT INTO carga (idmaestro,idmateria,idgrupo) VALUES('".$datos->getidmaestro()."','".$datos->getdimateria()."','".$datos->getidgrupo()."')";
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -29,7 +29,7 @@ class bd_cargar extends DataBase{
             for ($i=0; $i < $resultado->num_rows; $i++) { 
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new carga($reglon);
+                $dato_tabla = new carga($renglon);
 
                 $lista[$i]= $dato_tabla;
             }

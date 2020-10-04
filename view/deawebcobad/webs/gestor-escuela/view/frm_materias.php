@@ -23,12 +23,12 @@
                 <h1>Registro de materias</h1>
             </div>
             <div class="radius-inf">
-                <form name="add-grupos" method="post" action="">
+                <form name="add-grupos" method="post" action="control/agregar">
                     <label>Nombre: </label>
                     <input name="materia" type="text" maxlength="40">
                     <br>
                     <label>Area: </label>
-                    <select>
+                    <select name='area'>
                         <option value="0"> </option>
                         <option value="1">Componente básico</option>
                         <option value="2">Componente profecional</option>

@@ -4,12 +4,11 @@
 include_once('base.php');
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.php");
 
-class bd_especialidades extends DataBase{
+class bd_especialidad extends DataBase{
 
     public function agrega($datos){
-        $sql = "INSERT INTO carga ('especialidad') VALUES('".$datos->getespecialidad()."')";
+        $sql = "INSERT INTO especialidades (especialidad) VALUES('".$datos->getespecialidad()."')";
         $con = $this->getDB();
-
         $resultado = $con->query($sql);
         $con->close();
 
@@ -29,7 +28,7 @@ class bd_especialidades extends DataBase{
             for ($i=0; $i < $resultado->num_rows; $i++) { 
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new especialidades($reglon);
+                $dato_tabla = new especialidades($renglon);
 
                 $lista[$i]= $dato_tabla;
             }
@@ -38,6 +37,29 @@ class bd_especialidades extends DataBase{
         return $lista;
 
     }
+
+    
+    public function busca($id){
+        $lista = array();
+
+        $sql = "SELECT * FROM especialidades WHERE idespecialidad=".$id;
+        $con = $this->getDB();
+
+        $resultado = $con->query($sql);
+        $con->close();
+
+        if($resultado->num_rows>0){
+                $renglon = $resultado->fetch_assoc();
+
+                $dato_tabla = new especialidades($renglon);
+
+                $lista[0]= $dato_tabla;
+        }
+
+        return $lista;
+
+    }
+
 
     public function elimina($id){
         

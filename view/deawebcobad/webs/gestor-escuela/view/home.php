@@ -30,46 +30,46 @@
                         <div id="info-0" class="info show">
                             <div >
                                 <strong>Grupos</strong>
-                                <a class="btn block" href="gestor-escuela/grupos/consultar" >Consultar</a>
-                                <a class="btn block" href="gestor-escuela/grupos/agregar" >Agregar</a>
-                                <a class="btn block" href="gestor-escuela/grupos/eliminar" >Eliminar</a>
-                                <a class="btn block" href="gestor-escuela/grupos/actualizar" >Actualizar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/grupos/consultar" >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/grupos/agregar" >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/grupos/eliminar" >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/grupos/actualizar" >Actualizar</a>
                             </div>
                         </div>
                         <div id="info-1" class="info"> 
                             <div>
                                 <strong>Especialidad</strong>
-                                <a class="btn block" href="gestor-escuela/especialidad/consultar"  >Consultar</a>
-                                <a class="btn block" href="gestor-escuela/especialidad/agregar"  >Agregar</a>
-                                <a class="btn block" href="gestor-escuela/especialidad/eliminar"  >Eliminar</a>
-                                <a class="btn block" href="gestor-escuela/especialidad/actualizar"  >Actualizar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/especialidad/consultar"  >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/especialidad/agregar"  >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/especialidad/eliminar"  >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/especialidad/actualizar"  >Actualizar</a>
                             </div>
                         </div>
                         <div id="info-2" class="info">
                             <div>
                                 <strong>Maestros</strong>
-                                <a class="btn block" href="gestor-escuela/maestros/consultar"  >Consultar</a>
-                                <a class="btn block" href="gestor-escuela/maestros/agregar"  >Agregar</a>
-                                <a class="btn block" href="gestor-escuela/maestros/eliminar"  >Eliminar</a>
-                                <a class="btn block" href="gestor-escuela/maestros/actualizar"  >Actualizar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/maestros/consultar"  >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/maestros/agregar"  >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/maestros/eliminar"  >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/maestros/actualizar"  >Actualizar</a>
                             </div>
                         </div>
                         <div id="info-3" class="info">
                             <div>
                                 <strong>Materias</strong>
-                                <a class="btn block" href="gestor-escuela/materias/consultar"  >Consultar</a>
-                                <a class="btn block" href="gestor-escuela/materias/agregar"  >Agregar</a>
-                                <a class="btn block" href="gestor-escuela/materias/eliminar"  >Eliminar</a>
-                                <a class="btn block" href="gestor-escuela/materias/actualizar"  >Actualizar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/materias/consultar"  >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/materias/agregar"  >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/materias/eliminar"  >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/materias/actualizar"  >Actualizar</a>
                             </div>
                         </div>
                         <div id="info-4" class="info">
                             <div>
                                 <strong>Carga</strong>
-                                <a class="btn block" href="gestor-escuela/carga/consultar"  >Consultar</a>
-                                <a class="btn block" href="gestor-escuela/carga/agregar"  >Agregar</a>
-                                <a class="btn block" href="gestor-escuela/carga/eliminar"  >Eliminar</a>
-                                <a class="btn block" href="gestor-escuela/carga/actualizar"  >Actualizar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/carga/consultar"  >Consultar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/carga/agregar"  >Agregar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/carga/eliminar"  >Eliminar</a>
+                                <a class="btn block" href="<?php echo $url.'/deawebcobad/web/' ?>gestor-escuela/carga/actualizar"  >Actualizar</a>
                             </div>
                         </div>
                     </td>

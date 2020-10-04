@@ -23,6 +23,7 @@ $data = array(
     array("Tarea: frameworks de desarrollo web", "Investigación sobre los frameworks para el desarrollo web", "Investigación de frameworks", "/deawebcobad/actividad/investigacion-frameworks.php"),
     array("Cargar un archivo", "Programa que cargar un archivo .jpg y lo sube al servidor", "Solo soporta imagenes JPG", "/deawebcobad/actividad/subir-archivos.php"),
     array("Cargar un archivo ordenado", "Programa que cargar un archivo .jpg y lo sube al servidor de manera ordenada", "Los separa por grupos", "/deawebcobad/actividad/subir-archivos-ordenados.php"),
+    array("Gestor escuela","Multiples consultas a tablas", "Pagina web independiente", "/deawebcobad/web/gestor-escuela/")
 
 );
 

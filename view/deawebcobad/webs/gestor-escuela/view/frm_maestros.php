@@ -23,7 +23,7 @@
                 <h1>Registro de maestros</h1>
             </div>
             <div class="radius-inf">
-                <form name="add-grupos" method="post" action="">
+                <form name="add-grupos" method="post" action="control/agregar">
                     <label><strong>Nombre:</strong></label><br>
                     <input name="appat" maxlength="15" size="15" placeholder="Apellido paterno">
                     <input name="apmat" maxlength="15" size="15" placeholder="Apellido materno">

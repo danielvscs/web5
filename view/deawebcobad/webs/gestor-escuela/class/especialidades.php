@@ -7,16 +7,16 @@ class especialidades extends base{
     protected $idespecialidad;
     protected $especialidad;
 
-    function set_idespecialidad($idespecialidad) { 
+    function setidespecialidad($idespecialidad) { 
         $this->idespecialidad = $idespecialidad; 
     }
-    function get_idespecialidad() { 
+    function getidespecialidad() { 
         return $this->idespecialidad; 
     }
-    function set_especialidad($especialidad) { 
+    function setespecialidad($especialidad) { 
         $this->especialidad = $especialidad; 
     }
-    function get_especialidad() { 
+    function getespecialidad() { 
         return $this->especialidad; 
     }
 

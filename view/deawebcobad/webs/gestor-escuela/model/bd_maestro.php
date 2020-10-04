@@ -7,7 +7,7 @@ include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/maestros.php");
 class bd_maestro extends DataBase{
 
     public function agrega($datos){
-        $sql = "INSERT INTO maestros ('appat','apmat','nombre','rfc','curp','idstatus') VALUES('".$datos->getappat()."','".$datos->getapmat()."','".$datos->getnombre()."','".$datos->getrfc()."', '".$datos->getcurp()."', 1)";
+        $sql = "INSERT INTO maestros (appat,apmat,nombre,rfc,curp,idstatus) VALUES('".$datos->getappat()."','".$datos->getapmat()."','".$datos->getnombre()."','".$datos->getrfc()."', '".$datos->getcurp()."', 1)";
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -16,10 +16,10 @@ class bd_maestro extends DataBase{
 
     }
 
-    public function lista(){
+    public function lista($idstatus){
         $lista = array();
 
-        $sql = "SELECT * FROM maestros ORDER BY idmaestro";
+        $sql = "SELECT * FROM maestros WHERE idstatus=".$idstatus." ORDER BY idmaestro";
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -29,7 +29,7 @@ class bd_maestro extends DataBase{
             for ($i=0; $i < $resultado->num_rows; $i++) { 
                 $renglon = $resultado->fetch_assoc();
 
-                $dato_tabla = new grupos($reglon);
+                $dato_tabla = new maestros($renglon);
 
                 $lista[$i]= $dato_tabla;
             }
