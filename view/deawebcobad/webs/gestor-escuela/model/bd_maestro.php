@@ -41,7 +41,7 @@ class bd_maestro extends DataBase{
 
     public function elimina($id){
         
-        $sql = "UPDATE maestros SET idstatus=0 WHERE idmaestro=".$datos->getidmaestro();
+        $sql = "UPDATE maestros SET idstatus=0 WHERE idmaestro=".$id;
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -55,5 +55,29 @@ class bd_maestro extends DataBase{
         $resultado = $con->query($sql);
         $con->close();
     }
+
+       
+    public function busca($id){
+        $lista = array();
+
+        $sql = "SELECT * FROM maestros WHERE idmaestro=".$id;
+        $con = $this->getDB();
+
+        $resultado = $con->query($sql);
+        $con->close();
+
+        if($resultado->num_rows>0){
+                $renglon = $resultado->fetch_assoc();
+
+                $dato_tabla = new maestros($renglon);
+
+                $lista[0]= $dato_tabla;
+        }
+
+        return $lista;
+
+    }
+
+    
 
 }

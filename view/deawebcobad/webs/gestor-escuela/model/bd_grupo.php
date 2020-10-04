@@ -50,9 +50,29 @@ class bd_grupo extends DataBase{
     public function actualiza($datos){
         $sql = "UPDATE grupos SET semestre='".$datos->getsemestre()."', grupo='".$datos->getgrupo()."', turno='".$datos->getturno()."', idespecialidad='".$datos->getidespecialidad()."' WHERE idgrupo=".$datos->getidgrupo();
         $con = $this->getDB();
+        $resultado = $con->query($sql);
+        $con->close();
+    }
+   
+    public function busca($id){
+        $lista = array();
+
+        $sql = "SELECT * FROM grupos WHERE idgrupo=".$id;
+        $con = $this->getDB();
 
         $resultado = $con->query($sql);
         $con->close();
+
+        if($resultado->num_rows>0){
+                $renglon = $resultado->fetch_assoc();
+
+                $dato_tabla = new grupos($renglon);
+
+                $lista[0]= $dato_tabla;
+        }
+
+        return $lista;
+
     }
 
 }

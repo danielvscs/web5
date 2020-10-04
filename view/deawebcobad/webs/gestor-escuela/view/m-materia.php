@@ -2,20 +2,13 @@
 
 <?php
 
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/grupos.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_grupo.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_materia.php");
 
 
-$bd = new bd_grupo();
+$bd = new bd_materia();
 
 $lista = $bd->lista();
-
-
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.php");
-include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_especialidad.php");
-
-
-$bde = new bd_especialidad();
 
 
 ?>
@@ -45,14 +38,14 @@ $bde = new bd_especialidad();
                 <h1>Especialidades registradas</h1>
             </div>
             <div class="radius-inf">
-                <form action="control/eliminar" method="POST">
+                <form action="control/actualizar" method="POST">
                         <?php
                         for ($i=0; $i < count($lista); $i++) {
-                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidgrupo()."' >".$lista[$i]->getsemestre()." ".$lista[$i]->getgrupo()." ".$bde->busca($lista[$i]->getidespecialidad())[0]->getespecialidad()."<br>\n";
+                            echo "  <input type='radio' name='idmateria' value='".$lista[$i]->getidmateria()."' >".$lista[$i]->getmateria()."<br>\n";
 
                         }
                         ?>
-                        <button type="submit" class="btn">Eliminar</button>
+                        <button type="submit" class="btn">Actualizar</button>
                 </form>
             
             </div>

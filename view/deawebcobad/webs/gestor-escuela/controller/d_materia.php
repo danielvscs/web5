@@ -1,18 +1,20 @@
 <?php
 
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
+
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_materia.php");
 
 
 $datos = new materias($_POST);
+
 $bd = new bd_materia();
 
-$bd->agrega($datos);
 
+$bd->elimina($datos->getidmateria());
 
 #header a especialidad
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +24,7 @@ $bd->agrega($datos);
 </head>
     <body>
         <script type="text/javascript">
-        window.location="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/materias/consultar";
+        //window.location="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/materias/consultar";
         </script>
     </body>
 </html>

@@ -6,19 +6,21 @@ include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/especialidades.p
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_especialidad.php");
 
 
+
+$datos = new especialidades($_POST);
+
 $bd = new bd_especialidad();
 
-$lista = $bd->lista();
+$lista = $bd->busca($datos->getidespecialidad());
 
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de especialidades</title>
+    <title>Subir imagenes</title>
     <!-------------------Forza a cargar los estilos css mientras está en estado de desarrollo ------------------------>
     
     <link href="<?php echo $url.'/src/css/gestorescuela.css?v='.filemtime($raiz.'/src/css/gestorescuela.css'); ?>" rel="stylesheet">
@@ -27,7 +29,7 @@ $lista = $bd->lista();
 <body>
     <nav class="inv">   
         <div class="navbar">
-            <strong class="title-nav"><a href='<?php echo $url?>' class="a-white">Desarrolla aplicaciones web con conexion a base de datos</a></strong>
+            <strong class="title-nav"><a href="/web5/" class="a-white">Desarrolla aplicaciones web con conexion a base de datos</a></strong>
         </div>
     </nav>
 
@@ -35,21 +37,21 @@ $lista = $bd->lista();
 
         <div class="d-content">
             <div  class="radius-sup" >
-                <h1>Especialidades registradas</h1>
+                <h1>Registro de especialidad</h1>
             </div>
             <div class="radius-inf">
-                <table>
-                    <tbody>
-                        <?php
-                        for ($i=0; $i < count($lista); $i++) { 
-                            echo "<tr>\n";
-                            echo "  <td>".$lista[$i]->getespecialidad()."</td>\n";
-                            echo "</tr>\n";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-                <a href="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/">Ir al menú</a>
+                <form name="add-grupos" method="post" action="actualizarp">
+                    <label>Nombre: </label>
+                    <input name="especialidad" type="text" maxlength="40" value="<?php echo $lista[0]->getespecialidad() ?>">
+                    <br>
+                    <br>
+                
+                <input name="idespecialidad" type="hidden" value="<?php echo $lista[0]->getidespecialidad() ?>">
+                <input type="submit" name="procesos" value="Enviar">
+                
+    
+            </form>
+            
             </div>
         </div>
 

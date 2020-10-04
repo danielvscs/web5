@@ -54,6 +54,7 @@ $bde = new bd_especialidad();
                     </tbody>
                 </table>
             
+                <a href="https://danvscs47.000webhostapp.com/deawebcobad/web/gestor-escuela/">Ir al menú</a>
             </div>
         </div>
 

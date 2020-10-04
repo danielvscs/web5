@@ -41,7 +41,8 @@ class bd_materia extends DataBase{
 
     public function elimina($id){
         
-        $sql = "DELETE FROM materias WHERE idmaterias=".$id;
+        $sql = "DELETE FROM materias WHERE idmateria=".$id;
+        echo $sql;
         $con = $this->getDB();
 
         $resultado = $con->query($sql);
@@ -54,6 +55,27 @@ class bd_materia extends DataBase{
 
         $resultado = $con->query($sql);
         $con->close();
+    }
+       
+    public function busca($id){
+        $lista = array();
+
+        $sql = "SELECT * FROM materias WHERE idmateria=".$id;
+        $con = $this->getDB();
+
+        $resultado = $con->query($sql);
+        $con->close();
+
+        if($resultado->num_rows>0){
+                $renglon = $resultado->fetch_assoc();
+
+                $dato_tabla = new materias($renglon);
+
+                $lista[0]= $dato_tabla;
+        }
+
+        return $lista;
+
     }
 
 }
