@@ -60,5 +60,8 @@ $bde = new bd_especialidad();
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

@@ -68,5 +68,8 @@ $lista = $bdc->lista();
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

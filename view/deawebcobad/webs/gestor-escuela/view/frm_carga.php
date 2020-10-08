@@ -18,33 +18,33 @@ $listaec = $bde->lista();
 $listagc = $bdg->lista();
 $listamc = $bdm->lista(1);
 
-$datae = array("idmateria", array(),array());
+$datae = array("idmateria", "", array(),array());
 
-$datae[1][0]=0;
-$datae[2][0]="";
+$datae[2][0]=0;
+$datae[3][0]="";
 for ($i=1; $i <=count($listaec) ; $i++) { 
-    $datae[1][$i]=$listaec[$i-1]->getidmateria();
-    $datae[2][$i]=$listaec[$i-1]->getmateria();
+    $datae[2][$i]=$listaec[$i-1]->getidmateria();
+    $datae[3][$i]=$listaec[$i-1]->getmateria();
 }
 
 
-$datag = array("idgrupo", array(),array());
+$datag = array("idgrupo", "", array(),array());
 
-$datag[1][0]=0;
-$datag[2][0]="";
+$datag[2][0]=0;
+$datag[3][0]="";
 for ($i=1; $i <=count($listagc) ; $i++) { 
-    $datag[1][$i]=$listagc[$i-1]->getidgrupo();
-    $datag[2][$i]=$listagc[$i-1]->getsemestre().$listagc[$i-1]->getgrupo()." ".$listagc[$i-1]->getturno();
+    $datag[2][$i]=$listagc[$i-1]->getidgrupo();
+    $datag[3][$i]=$listagc[$i-1]->getsemestre().$listagc[$i-1]->getgrupo()." ".$listagc[$i-1]->getturno();
 }
 
 
-$datam = array("idmaestro", array(),array());
+$datam = array("idmaestro", "",array(),array());
 
-$datam[1][0]=0;
-$datam[2][0]="";
+$datam[2][0]=0;
+$datam[3][0]="";
 for ($i=1; $i <=count($listamc) ; $i++) { 
-    $datam[1][$i]=$listamc[$i-1]->getidmaestro();
-    $datam[2][$i]=$listamc[$i-1]->getnombre()." ".$listamc[$i-1]->getappat()." ".$listamc[$i-1]->getapmat();
+    $datam[2][$i]=$listamc[$i-1]->getidmaestro();
+    $datam[3][$i]=$listamc[$i-1]->getnombre()." ".$listamc[$i-1]->getappat()." ".$listamc[$i-1]->getapmat();
 }
 
 ?>
@@ -96,5 +96,8 @@ for ($i=1; $i <=count($listamc) ; $i++) {
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

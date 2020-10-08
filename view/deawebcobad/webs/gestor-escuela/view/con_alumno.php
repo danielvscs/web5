@@ -30,7 +30,7 @@ $lista = $bd->lista();
 
     <div class="d-act center form">
 
-        <div class="d-content">
+        <div class="d-content" >
             <div  class="radius-sup" >
                 <h1>Alumnos registrados</h1>
             </div>
@@ -56,5 +56,8 @@ $lista = $bd->lista();
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

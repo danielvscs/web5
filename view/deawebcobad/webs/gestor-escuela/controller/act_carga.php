@@ -9,7 +9,13 @@ include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_grupo.php");
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/maestros.php");
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_maestro.php");
 
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/carga.php");
+include_once($raiz."/view/deawebcobad/webs/gestor-escuela/model/bd_carga.php");
+
 $id = $_POST['idcarga'];
+
+$bdc = new bd_carga();
+$carga = $bdc->busca($id);
 
 $bde = new bd_materia();
 $bdg= new bd_grupo();
@@ -19,33 +25,33 @@ $listae = $bde->lista();
 $listag = $bdg->lista();
 $listam = $bdm->lista(1);
 
-$datae = array("idmateria", array(),array());
+$datae = array("idmateria", $carga[0]->getidmateria(), array(),array());
 
-$datae[1][0]=0;
-$datae[2][0]="";
+$datae[2][0]=0;
+$datae[3][0]="";
 for ($i=1; $i <=count($listae) ; $i++) { 
-    $datae[1][$i]=$listae[$i-1]->getidmateria();
-    $datae[2][$i]=$listae[$i-1]->getmateria();
+    $datae[2][$i]=$listae[$i-1]->getidmateria();
+    $datae[3][$i]=$listae[$i-1]->getmateria();
 }
 
 
-$datag = array("idgrupo", array(),array());
+$datag = array("idgrupo", $carga[0]->getidgrupo(), array(),array());
 
-$datag[1][0]=0;
-$datag[2][0]="";
+$datag[2][0]=0;
+$datag[3][0]="";
 for ($i=1; $i <=count($listag) ; $i++) { 
-    $datag[1][$i]=$listag[$i-1]->getidgrupo();
-    $datag[2][$i]=$listag[$i-1]->getsemestre().$listag[$i-1]->getgrupo()." ".$listag[$i-1]->getturno();
+    $datag[2][$i]=$listag[$i-1]->getidgrupo();
+    $datag[3][$i]=$listag[$i-1]->getsemestre().$listag[$i-1]->getgrupo()." ".$listag[$i-1]->getturno();
 }
 
 
-$datam = array("idmaestro", array(),array());
+$datam = array("idmaestro",  $carga[0]->getidmaestro(), array(),array());
 
-$datam[1][0]=0;
-$datam[2][0]="";
+$datam[2][0]=0;
+$datam[3][0]="";
 for ($i=1; $i <=count($listam) ; $i++) { 
-    $datam[1][$i]=$listam[$i-1]->getidmaestro();
-    $datam[2][$i]=$listam[$i-1]->getnombre()." ".$listam[$i-1]->getappat()." ".$listam[$i-1]->getapmat();
+    $datam[2][$i]=$listam[$i-1]->getidmaestro();
+    $datam[3][$i]=$listam[$i-1]->getnombre()." ".$listam[$i-1]->getappat()." ".$listam[$i-1]->getapmat();
 }
 
 ?>
@@ -97,5 +103,8 @@ for ($i=1; $i <=count($listam) ; $i++) {
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

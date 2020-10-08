@@ -27,7 +27,19 @@ body{
     padding: 0px;   
     border: 0px;
 }
-
+footer{
+    background: var(--text-color);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: var(--bg-color);
+}
+footer>div{
+    padding: 10pt; 
+}
+footer p{
+    display: inline;
+}
 table, .radius-inf{
     width: 100%;
     padding: 5pt;
@@ -180,4 +192,60 @@ div.buttons-collapse div.d-hidden{
     border: 1px solid lightgray;
     display: block;
     margin: 0px;
+}
+
+/******************** tooltip  **************************/
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+    
+
+.tooltip{
+        
+    text-align: center;
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    background-color: var(--no-imp2-color);
+    padding: 10pt;
+}
+.tooltip.mostrar{
+    opacity: 0;
+    display: block;
+    animation: aparecer 8s;
+}
+
+@keyframes aparecer{
+    0%   {opacity: 0;}
+    10%  {opacity: 1;}  
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.btn-info{
+    cursor: help;
+    background-color: #0000;
+    border: none;
+}
+.btn-info.dev{
+    color: red;
+}
+
+.btn-info:focus{
+    outline-width: 0px;
 }

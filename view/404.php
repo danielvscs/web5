@@ -17,5 +17,8 @@
         <h1>ERROR 404:</h1>
         <strong>Pagina no encontrada</strong>
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

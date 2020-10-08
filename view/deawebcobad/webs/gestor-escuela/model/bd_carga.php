@@ -9,7 +9,6 @@ class bd_carga extends DataBase{
     public function agrega($datos){
         $sql = "INSERT INTO carga (idmaestro,idmateria,idgrupo) VALUES(".$datos->getidmaestro().",".$datos->getidmateria().",".$datos->getidgrupo().")";
         $con = $this->getDB();
-        echo $sql;
         $resultado = $con->query($sql);
         $con->close();
 

@@ -8,15 +8,39 @@ $bd = new bd_especialidad();
 
 $lista = $bd->lista();
 
-$data = array("idespecialidad", array(),array());
+$data = array("idespecialidad", "", array(),array());
 
-$data[1][0]=0;
-$data[2][0]="";
+$data[2][0]=0;
+$data[3][0]="";
 for ($i=1; $i <=count($lista) ; $i++) { 
-    $data[1][$i]=$lista[$i-1]->getidespecialidad();
-    $data[2][$i]=$lista[$i-1]->getespecialidad();
+    $data[2][$i]=$lista[$i-1]->getidespecialidad();
+    $data[3][$i]=$lista[$i-1]->getespecialidad();
 }
 
+
+$data_sem = array(
+    "semestre",
+    "",
+    array(0,1,2,3,4,5,6),
+    array("","1°","2°","3°","4°","5°","6°")
+);
+
+
+$data_grp=array(
+    "grupo",
+    "",
+    array("","A","B","C","D"),
+    array("","A","B","C","D")
+);
+
+
+$data_trn = array(
+    "turno",
+    "-1",
+    array("-1","M","V"),
+    array("","Matutino","Vespertino"),
+
+);
 ?>
 
 
@@ -47,30 +71,12 @@ for ($i=1; $i <=count($lista) ; $i++) {
                 <form name="add-grupos" method="post" action="control/agregar">
                     
                 <label>Semestre</label>
-                <select name="semestre">
-                    <option value="0"> </option>
-                    <option value="1">1°</option>
-                    <option value="2">2°</option>
-                    <option value="3">3°</option>
-                    <option value="4">4°</option>
-                    <option value="5">5°</option>
-                    <option value="6">6°</option>
-                </select>
+                <?php echo $bd->showselect($data_sem); ?>
                 <label>Grupo</label>
-                <select name="grupo">
-                    <option value="0"> </option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
+                <?php echo $bd->showselect($data_grp); ?>
                 <br>
                 <label>Turno: </label>
-                <select name="turno">
-                    <option value="-1"> </option>
-                    <option value="M">Matutino</option>
-                    <option value="V">Vespertino</option>
-                </select>
+                <?php echo $bd->showselect($data_trn); ?>
                 <label>Especialidad: </label>
                 <?php echo $bd->showselect($data); ?>
 
@@ -86,5 +92,8 @@ for ($i=1; $i <=count($lista) ; $i++) {
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

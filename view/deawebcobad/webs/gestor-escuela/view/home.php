@@ -96,13 +96,16 @@
                     <td><a class="a-titles"  onclick="showInfo(4)" id="option-4"  href="#">Carga</a></td>
                 </tr> 
                 <tr>
-                    <td><a class="a-titles"  onclick="showInfo(5)" id="option-5"  href="#">Alumonos</a></td>
+                    <td><a class="a-titles"  onclick="showInfo(5)" id="option-5"  href="#">Alumnos</a></td>
                 </tr> 
                 
             </tbody>
         </table>
         </div>
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 <script src="<?php echo $url.'/src/js/gestorescuela.js?v='.filemtime($raiz.'/src/js/gestorescuela.js'); ?>"></script>
 </body>
 </html>

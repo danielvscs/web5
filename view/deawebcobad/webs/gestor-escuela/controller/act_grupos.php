@@ -8,13 +8,13 @@ $bd = new bd_especialidad();
 
 $lista = $bd->lista();
 
-$data = array("idespecialidad", array(),array());
+$data = array("idespecialidad", $lista[0]->getidespecialidad(), array(),array());
 
-$data[1][0]=0;
-$data[2][0]="";
+$data[2][0]=0;
+$data[3][0]="";
 for ($i=1; $i <=count($lista) ; $i++) { 
-    $data[1][$i]=$lista[$i-1]->getidespecialidad();
-    $data[2][$i]=$lista[$i-1]->getespecialidad();
+    $data[2][$i]=$lista[$i-1]->getidespecialidad();
+    $data[3][$i]=$lista[$i-1]->getespecialidad();
 }
 
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/grupos.php");
@@ -27,6 +27,30 @@ $bd = new bd_grupo();
 
 $lista = $bd->busca($datos->getidgrupo());
 
+
+$data_sem = array(
+    "semestre",
+    $lista[0]->getsemestre(),
+    array(0,1,2,3,4,5,6),
+    array("","1°","2°","3°","4°","5°","6°")
+);
+
+
+$data_grp=array(
+    "grupo",
+    $lista[0]->getgrupo(),
+    array("","A","B","C","D"),
+    array("","A","B","C","D")
+);
+
+
+$data_trn = array(
+    "turno",
+    $lista[0]->getturno(),
+    array("-1","M","V"),
+    array("","Matutino","Vespertino"),
+
+);
 
 
 ?>
@@ -59,30 +83,12 @@ $lista = $bd->busca($datos->getidgrupo());
                 <form name="add-grupos" method="post" action="actualizarp">
                     
                 <label>Semestre</label>
-                <select name="semestre">
-                    <option value="0" <?php if($lista[0]->getsemestre()==0){echo "selected";} ?>> </option>
-                    <option value="1" <?php if($lista[0]->getsemestre()==1){echo "selected";} ?>>1°</option>
-                    <option value="2" <?php if($lista[0]->getsemestre()==2){echo "selected";} ?>>2°</option>
-                    <option value="3" <?php if($lista[0]->getsemestre()==3){echo "selected";} ?>>3°</option>
-                    <option value="4" <?php if($lista[0]->getsemestre()==4){echo "selected";} ?>>4°</option>
-                    <option value="5" <?php if($lista[0]->getsemestre()==5){echo "selected";} ?>>5°</option>
-                    <option value="6" <?php if($lista[0]->getsemestre()==6){echo "selected";} ?>>6°</option>
-                </select>
+                <?php echo $bd->showselect($data_sem); ?>
                 <label>Grupo</label>
-                <select name="grupo">
-                    <option value="0" <?php if($lista[0]->getgrupo()=="0"){echo "selected";} ?>> </option>
-                    <option value="A" <?php if($lista[0]->getgrupo()=="A"){echo "selected";} ?>>A</option>
-                    <option value="B" <?php if($lista[0]->getgrupo()=="B"){echo "selected";} ?>>B</option>
-                    <option value="C" <?php if($lista[0]->getgrupo()=="C"){echo "selected";} ?>>C</option>
-                    <option value="D" <?php if($lista[0]->getgrupo()=="B"){echo "selected";} ?>>D</option>
-                </select>
+                <?php echo $bd->showselect($data_grp); ?>
                 <br>
                 <label>Turno: </label>
-                <select name="turno">
-                    <option value="-1"  <?php if($lista[0]->getturno()=="-1"){echo "selected";} ?>> </option>
-                    <option value="M" <?php if($lista[0]->getturno()=="M"){echo "selected";} ?>>Matutino</option>
-                    <option value="V" <?php if($lista[0]->getturno()=="V"){echo "selected";} ?>>Vespertino</option>
-                </select>
+                <?php echo $bd->showselect($data_trn); ?>
                 <label>Especialidad: </label>
                 <?php echo $bd->showselect($data); ?>
 
@@ -98,5 +104,8 @@ $lista = $bd->busca($datos->getidgrupo());
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

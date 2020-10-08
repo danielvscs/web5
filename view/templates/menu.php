@@ -81,6 +81,7 @@ if($data==null){
                 }
             }  
         }
+    include_once($raiz."/view/templates/footer.php");
     ?>
 
 </body>

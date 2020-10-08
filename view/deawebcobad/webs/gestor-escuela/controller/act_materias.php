@@ -1,5 +1,3 @@
-
-
 <?php
 
 include_once($raiz."/view/deawebcobad/webs/gestor-escuela/class/materias.php");
@@ -62,5 +60,8 @@ $lista = $bd->busca($datos->getidmateria());
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

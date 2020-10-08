@@ -6,6 +6,9 @@ error_reporting(E_ALL);
 
 
 $local = false;
+$dev = false;
+
+
 $lh = "";
 
 $url = "https://danvscs47.000webhostapp.com";

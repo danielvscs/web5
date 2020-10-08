@@ -62,5 +62,8 @@ $lista = $bd->busca($datos->getidmaestro());
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

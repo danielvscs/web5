@@ -78,6 +78,7 @@ div.info>div{
     from{opacity: 0;}
 }
 @keyframes into{
+    
     from{opacity: 0;}
     to{opacity: 1;}
 }

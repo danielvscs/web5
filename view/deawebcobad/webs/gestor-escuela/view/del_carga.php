@@ -56,7 +56,7 @@ $lista = $bdc->lista();
                             
                             $grupo =$bdg->busca($lista[$i]->getidgrupo())[0];
                             $maestro =$bdm->busca($lista[$i]->getidmaestro())[0];
-                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidcarga()."' >".$maestro->getappat()." ".$maestro->getapmat()." ".$maestro->getnombre()." | ".$grupo->getsemestre().$gupo->getgrupo().$grupo->getturno()."<br>\n";
+                            echo "  <input type='radio' name='idgrupo' value='".$lista[$i]->getidcarga()."' >".$maestro->getappat()." ".$maestro->getapmat()." ".$maestro->getnombre()." | ".$grupo->getsemestre().$grupo->getgrupo().$grupo->getturno()."<br>\n";
 
                         }
                         ?>
@@ -68,5 +68,8 @@ $lista = $bdc->lista();
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

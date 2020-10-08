@@ -57,5 +57,8 @@ $lista = $bd->busca($datos->getidespecialidad());
 
         
     </div>
+    <?php
+    include_once($raiz."/view/templates/footer.php");
+    ?>
 </body>
 </html>

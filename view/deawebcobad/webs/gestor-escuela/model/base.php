@@ -53,8 +53,14 @@ class DataBase{
  */
     public function showselect($data){
         echo "<select name='".$data[0]."'>\n";
-        for ($i=0; $i<count($data[1]) ; $i++) { 
-            echo "  <option value='".$data[1][$i]."'>".$data[2][$i]."</option>\n";
+
+        for ($i=0; $i<count($data[2]) ; $i++) { 
+            $s = '';
+            if($data[2][$i]==$data[1]){
+            $s = " selected ";
+            }
+
+            echo "  <option value='".$data[2][$i]."'".$s." >".$data[3][$i]."</option>\n";
         }
         echo "</select>\n";
     }
